@@ -8,8 +8,8 @@ class ActionCheckAvailability(Action):
         return "action_check_availability"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # Logique pour vérifier la disponibilité
-        available = True  # Supposons que la réservation est disponible
+        
+        available = True  
         if available:
             dispatcher.utter_message(text="La date est disponible.")
         else:
@@ -26,7 +26,7 @@ class ActionBookTable(Action):
         name = tracker.get_slot('name')
         phone_number = tracker.get_slot('phone_number')
         comment = tracker.get_slot('comment')
-        # Logique pour enregistrer la réservation et générer un numéro de réservation
+        
         reservation_id = "12345"
         dispatcher.utter_message(text=f"Votre réservation a été confirmée. Votre numéro de réservation est {reservation_id}.")
         return [SlotSet("reservation_id", reservation_id)]
@@ -36,7 +36,7 @@ class ActionCancelReservation(Action):
         return "action_cancel_reservation"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # Logique pour annuler la réservation
+        
         dispatcher.utter_message(text="Votre réservation a été annulée.")
         return []
 
@@ -59,7 +59,7 @@ class ActionUpdateComment(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         comment = tracker.get_slot('comment')
-        # Logique pour mettre à jour le commentaire
+        
         dispatcher.utter_message(text=f"Le commentaire a été mis à jour: {comment}")
         return []
 
@@ -68,7 +68,7 @@ class ActionDailyMenu(Action):
         return "action_daily_menu"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # Logique pour récupérer le menu du jour
+        
         daily_menu = "Voici le menu du jour: ..."
         dispatcher.utter_message(text=daily_menu)
         return []
@@ -78,7 +78,7 @@ class ActionAllergensList(Action):
         return "action_allergens_list"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # Logique pour récupérer la liste des allergènes
+        
         allergens_list = "Voici la liste des allergènes: ..."
         dispatcher.utter_message(text=allergens_list)
         return []
@@ -88,7 +88,7 @@ class ActionFullMenuLink(Action):
         return "action_full_menu_link"
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # Logique pour fournir le lien vers le menu complet
+        
         full_menu_link = "Voici le lien vers le menu complet: [URL du menu complet]"
         dispatcher.utter_message(text=full_menu_link)
         return []
