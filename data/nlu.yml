@@ -1,0 +1,43 @@
+version: "3.1"
+nlu:
+  - intent: book_table
+    examples: |
+      - Je veux réserver une table
+      - Réserver une table pour demain
+      - Puis-je réserver une table pour 4 personnes?
+
+  - intent: cancel_reservation
+    examples: |
+      - Annuler ma réservation
+      - Je veux annuler ma réservation
+      - Puis-je annuler ma réservation?
+
+  - intent: show_reservation
+    examples: |
+      - Afficher ma réservation
+      - Montrer les détails de ma réservation
+      - Quels sont les détails de ma réservation?
+
+  - intent: update_comment
+    examples: |
+      - Mettre à jour le commentaire de ma réservation
+      - Modifier le commentaire de ma réservation
+      - Changer le commentaire de ma réservation
+
+  - intent: daily_menu
+    examples: |
+      - Quel est le menu du jour?
+      - Qu'y a-t-il au menu aujourd'hui?
+      - Menu du jour
+
+  - intent: allergens_list
+    examples: |
+      - Quels sont les allergènes présents dans vos plats?
+      - Liste des allergènes
+      - Avez-vous des informations sur les allergènes?
+
+  - intent: full_menu_link
+    examples: |
+      - Puis-je avoir le lien vers le menu complet?
+      - Lien vers le menu complet
+      - Voir le menu complet

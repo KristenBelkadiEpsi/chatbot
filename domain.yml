@@ -1,0 +1,84 @@
+version: "3.1"
+intents:
+  - inform
+  - book_table
+  - cancel_reservation
+  - show_reservation
+  - update_comment
+  - daily_menu
+  - allergens_list
+  - full_menu_link
+
+entities:
+  - date
+  - number_of_people
+  - name
+  - phone_number
+  - reservation_id
+  - comment
+
+slots:
+  date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: date
+  number_of_people:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: number_of_people
+  name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: name
+  phone_number:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: phone_number
+  reservation_id:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: reservation_id
+  comment:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: comment
+
+responses:
+  utter_ask_date:
+    - text: "Quelle date souhaitez-vous réserver?"
+  utter_ask_number_of_people:
+    - text: "Pour combien de personnes?"
+  utter_ask_name:
+    - text: "Quel est le nom pour la réservation?"
+  utter_ask_phone_number:
+    - text: "Quel est votre numéro de téléphone?"
+  utter_ask_comment:
+    - text: "Avez-vous des commentaires à ajouter?"
+  utter_confirm_reservation:
+    - text: "Votre réservation a été confirmée. Votre numéro de réservation est {reservation_id}."
+  utter_reservation_cancelled:
+    - text: "Votre réservation a été annulée."
+  utter_show_reservation:
+    - text: "Voici les informations de votre réservation: Date: {date}, Nombre de personnes: {number_of_people}, Nom: {name}, Numéro de téléphone: {phone_number}, Commentaire: {comment}"
+  utter_daily_menu:
+    - text: "Voici le menu du jour: [Liste des plats du jour]"
+  utter_allergens_list:
+    - text: "Voici la liste des allergènes: [Liste des allergènes]"
+  utter_full_menu_link:
+    - text: "Voici le lien vers le menu complet: [URL du menu complet]"
+
+actions:
+  - action_check_availability
+  - action_book_table
+  - action_cancel_reservation
+  - action_show_reservation
+  - action_update_comment
+  - action_daily_menu
+  - action_allergens_list
+  - action_full_menu_link
