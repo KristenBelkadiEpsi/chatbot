@@ -1,0 +1,18 @@
+services:
+  rasa:
+    build: .
+    ports:
+      - "5005:5005"
+    volumes:
+      - .:/app
+    command: >
+      rasa run --enable-api --cors "*" --endpoints endpoints.yml --debug
+
+  action_server:
+    image: rasa/rasa-sdk:3.1.0
+    volumes:
+      - .:/app
+    ports:
+      - "5055:5055"
+    working_dir: /app
+    command: python -m rasa_sdk --debug
